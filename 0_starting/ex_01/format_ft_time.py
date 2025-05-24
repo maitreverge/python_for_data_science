@@ -11,8 +11,8 @@ def main():
     print(f"or {time_in_seconds:e} in scientific notation")
 
     # Extract the current date, and format it.
-    simple_date = datetime.datetime.now().strftime("%a %d ") 
-    print(datetime.datetime.now().strftime("%b %d %Y"))
+    simple_date = datetime.datetime.now().strftime("%b %d %Y") 
+    print(simple_date)
 
 if __name__ == "__main__":
     main()
