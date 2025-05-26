@@ -1,5 +1,6 @@
 import sys
 
+
 def parse_arg(args):
 
     try:
@@ -15,12 +16,11 @@ def parse_arg(args):
         sys.exit(1)
 
 
-
 def main():
     # sys.argv = ['whatis.py', '1', '2', '3']
     if len(sys.argv) == 1:
         sys.exit(1)
-    
+
     parse_arg(sys.argv)
 
     nb = int(sys.argv[1])
@@ -29,7 +29,6 @@ def main():
         print("I'm Even.")
     else:
         print("I'm Odd.")
-
 
 
 if __name__ == "__main__":

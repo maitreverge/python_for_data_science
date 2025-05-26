@@ -22,7 +22,7 @@ def NULL_not_found(object: any) -> int:
             name = "Fake"
         case "None":
             name = "Fake"
-    
+
     print(f"{name}: {object} {current_type}")
-    
+
     return 0

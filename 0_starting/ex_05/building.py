@@ -48,7 +48,7 @@ def count_letters(str):
             lower += 1
         elif char.isdigit():
             digit += 1
-        elif char.isspace() or char == '\n':
+        elif char.isspace() or char == "\n":
             space += 1
         else:
             punct += 1
