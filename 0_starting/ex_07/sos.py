@@ -17,8 +17,6 @@ def parse_arg():
     Checks if 1 arguments in provided
     Checks if there is only alphanumeric and spaces in the provided argument
     """
-    print(f"LEN ARGV = {len(sys.argv)}")
-
     assert_arg(len(sys.argv) == 2)
 
     sstr = sys.argv[1]
@@ -76,7 +74,10 @@ def main():
 
     sstr = parse_arg()
 
-    print(sstr)
+    # Stripped result to delete trailing space for the last char
+    morse = "".join([NESTED_MORSE[char] for char in sstr]).strip()
+
+    print(morse)
 
 
 if __name__ == "__main__":
