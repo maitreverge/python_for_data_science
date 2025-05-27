@@ -22,7 +22,7 @@ def ft_filter(function, iterable):
 
 def main():
     """
-    Main function
+    Main function for testing
     """
 
     print(ft_filter(lambda x: x % 2 == 0, [0, 1, 2, 3, 4, 5]))
