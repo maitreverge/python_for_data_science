@@ -21,7 +21,7 @@ def ft_tqdm(lst: range):
             percentage * PROGRESS_BAR_LENGHT / 100 / (PROGRESS_BAR_LENGHT / 80)
         )
 
-        # for _ in full_blocks:
+        # Updates the content of progress bar by adding full blocks and spaces
         progress_bar = (FULL_BLOCK * int(full_blocks)) + (
             " " * (PROGRESS_BAR_LENGHT - int(full_blocks))
         )
