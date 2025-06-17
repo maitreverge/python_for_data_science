@@ -5,5 +5,5 @@ def ft_tqdm(lst: range):
 
     for i in lst:
         yield i
-        percentage += 1
-        print(f"{percentage}% | |",end="", flush=True)
+        percentage += (1 / len_lst) * 100
+        print(f"\r{percentage:.0f}% | | {i + 1}/{len_lst}",end="", flush=True)
