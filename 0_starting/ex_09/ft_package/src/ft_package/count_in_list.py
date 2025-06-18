@@ -1,5 +1,5 @@
-def count_in_list(lst: list) -> int:
+def count_in_list(lst: list, needle) -> int:
     """
-    Return the length of the iterable lst.
+    Return the occurence number of `needle` in `lst`.
     """
-    return len(lst)
+    return (lst.count(needle))

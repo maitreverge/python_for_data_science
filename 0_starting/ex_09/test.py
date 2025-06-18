@@ -1,5 +1,4 @@
-import ft_package
-import ft_package.src
-import ft_package.src.count_in_list
+from ft_package import count_in_list
 
-ft_package.src.count_in_list()
+print(count_in_list(["toto", "tata", "toto"], "toto"))
+print(count_in_list(["toto", "tata", "toto"], "tutu"))
