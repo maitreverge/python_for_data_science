@@ -14,7 +14,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+# dist/  # Dist is disable because of 0_starting/ex_09
 downloads/
 eggs/
 .eggs/
