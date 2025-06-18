@@ -45,7 +45,7 @@ def decrypt(paths, file_names, key):
             base, ext = os.path.splitext(filename)
             
             # Create encrypted filename path
-            encrypted_filename = f"{base}_encrypted{ext}"
+            encrypted_filename = f"{base}{ext}"
             encrypted_path = os.path.join(directory, encrypted_filename)
             
             # Check if encrypted file exists
@@ -66,7 +66,7 @@ def decrypt(paths, file_names, key):
             decrypted_data = cipher.decrypt(ciphertext)
             
             # Create decrypted filename (preserving extension)
-            decrypted_filename = f"{base}_decrypted{ext}"
+            decrypted_filename = f"{base}{ext}"
             decrypted_path = os.path.join(directory, decrypted_filename)
             
             # Write the decrypted data
