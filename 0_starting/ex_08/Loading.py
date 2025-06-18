@@ -1,3 +1,6 @@
+from time import sleep
+
+
 FULL_BLOCK = "█"
 # Since we can't use any module to get the terminal size,
 # I hardcoded the total progress_bar_lenght
@@ -31,3 +34,18 @@ def ft_tqdm(lst: range):
             end="", flush=True
         )
         yield i
+
+
+def main():
+    """
+    Main function
+    """
+    for i in range(-200, 800, 200):
+        print(f"Test for ft_tqdm(range({i}))\n")
+        for elem in ft_tqdm(range(i)):
+            sleep(0.005)
+        print("\n\n==========\n")
+
+
+if __name__ == "__main__":
+    main()
