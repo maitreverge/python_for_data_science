@@ -5,3 +5,4 @@ setuptools
 tqdm
 numpy
 pytest
+pillow
