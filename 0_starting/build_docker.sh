@@ -2,6 +2,8 @@
 
 CONTAINER_NAME="my_python"
 
+echo "⌛ BUILDING DOCKER PYTHON DATA SCIENCE ⌛"
+
 docker build -t $CONTAINER_NAME .
 
 docker run -d $CONTAINER_NAME
