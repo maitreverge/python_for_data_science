@@ -1,0 +1,8 @@
+pycryptodome
+black
+flake8
+setuptools
+tqdm
+numpy
+pytest
+pillow
