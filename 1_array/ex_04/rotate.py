@@ -5,18 +5,14 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 
-def ninty_rotate(original_array: np.ndarray):
-    """
-    Takes an NumPy array and performs a 90 degres anti-clockwise rotation.
+def rotate_90_ccw(original_array: np.ndarray) -> np.ndarray:
+    """Rotate a 2D NumPy array 90 degrees counterclockwise
 
-    [1, 2, 3]
-    [4, 5, 6]
-    [7, 8, 9]
+    Args:
+        original_array (np.ndarray): _description_
 
-    becomes
-    [3, 6, 9]
-    [2, 5, 8]
-    [1, 4, 7]
+    Returns:
+        np.ndarray: _description_
     """
 
     rows, cols = original_array.shape
@@ -30,9 +26,14 @@ def ninty_rotate(original_array: np.ndarray):
     return rotated
 
 
-def ft_rotate(np_array) -> None:
+def ft_rotate(np_array: np.ndarray) -> None:
     """
-    Crop, gray color and rotate 90 degres an image, with X/Y axis.
+    Takes an 2D image NumPy array.
+    Crops it in 400x400 size, rotates it counterclockwise, and displays it with
+    a X/Y axis.
+
+    Args:
+        np_array (np.ndarray): The 2D NumPy array.
     """
     im = Image.fromarray(np_array)
 
@@ -54,7 +55,7 @@ def ft_rotate(np_array) -> None:
     print(f"The shape of image is: {result_array.shape}")
     print(result_array)
 
-    rotated_pixels = ninty_rotate(result_array)
+    rotated_pixels = rotate_90_ccw(result_array)
 
     print(f"New shape after Transpose: {rotated_pixels.shape}")
 
