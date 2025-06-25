@@ -24,6 +24,7 @@ def ft_load(path: str) -> np.array:
     with Image.open(path) as im:
         # Simply load an im object into the array.
         array_image = np.array(im)
+        print(f"IMAGE MODE = {im.mode}")
         print(f"The shape of image is : {array_image.shape}")
         return array_image
 
