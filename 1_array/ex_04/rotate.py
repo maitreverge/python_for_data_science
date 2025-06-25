@@ -6,13 +6,14 @@ from PIL import Image
 
 
 def rotate_90_ccw(original_array: np.ndarray) -> np.ndarray:
-    """Rotate a 2D NumPy array 90 degrees counterclockwise
+    """
+    Rotate a 2D NumPy array 90 degrees counterclockwise
 
     Args:
-        original_array (np.ndarray): _description_
+        original_array (np.ndarray): The 2D NumPy array.
 
     Returns:
-        np.ndarray: _description_
+        np.ndarray (np.ndarray): The rotated 2D NumPy array.
     """
 
     rows, cols = original_array.shape
