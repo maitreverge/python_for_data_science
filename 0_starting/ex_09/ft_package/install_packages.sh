@@ -55,5 +55,3 @@ if [ "$1" = "3" ] ; then
 	install_3
 	exit 1
 fi
-
-"pip install ./dist/ft_package-0.0.1.tar.gz"

@@ -2,11 +2,11 @@ FROM python:3.10-alpine
 
 RUN apk add zsh
 
-RUN mkdir -p module_00
+RUN mkdir -p module_xx
 
-COPY . ./module_00
+COPY . ./module_xx
 
-WORKDIR /module_00
+WORKDIR /module_xx
 
 RUN pip install -r ./requirements.txt
 
