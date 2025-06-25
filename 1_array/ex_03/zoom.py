@@ -5,7 +5,7 @@ from PIL import Image
 from load_image import ft_load
 
 
-def ft_zoom(np_array: str) -> None:
+def ft_zoom(np_array) -> None:
     """
     Crop, applies a gray filter and displays a X/Y axis on a given image.
     """
