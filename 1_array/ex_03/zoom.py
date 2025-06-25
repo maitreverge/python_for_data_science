@@ -1,26 +1,29 @@
+import matplotlib.axes
 import numpy as np
-import sys, os
+import sys
+import matplotlib.pyplot as plt
 from PIL import Image
 from load_image import ft_load
 
 def ft_zoom(filename: str) -> None:
-    # ! Step 1, open the image in grayscale :
-    new_shape = (400, 400)
-
-    new_name = "gray_raton.jpg"
-
-    # ! do not save the image
     with Image.open(filename) as im:
         # Convert the image in grayscale
         grayscale_im = im.convert("L")
-        # .show() opens the image
-        # grayscale_im.show()
-        # im_2.save(new_name)
-        # ! alternative for different systems
-        # os.system(f"xdg-open {new_name}")
+        
+        
+        left, upper = 450, 110
+        right = left + 400
+        lower = upper + 400
 
+        crop_input = (left, upper, right, lower)
+        
+        cropped = grayscale_im.crop(crop_input)
+        
+        # cropped.show()
 
         result_array = np.array(grayscale_im)
+
+        plt.imshow(cropped, cmap='gray')
 
         # print(f"TYPE GRAYSCALE = {type(result_array)}")
 
@@ -28,6 +31,7 @@ def ft_zoom(filename: str) -> None:
         print(result_array)
 
         print(f"SHAPE = {result_array.shape}")
+        plt.show()
 
 
 
