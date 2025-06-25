@@ -33,7 +33,7 @@ def main():
     """
     Main function
     """
-    print(ft_load("landscape.jpg"))
+    print(ft_load("animal.jpeg"))
 
 
 if __name__ == "__main__":

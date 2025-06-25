@@ -5,58 +5,59 @@ from PIL import Image
 from load_image import ft_load
 
 
-def ft_zoom(filename: str) -> None:
+def ft_zoom(np_array: str) -> None:
     """
     Crop, applies a gray filter and displays a X/Y axis on a given image.
     """
-    with Image.open(filename) as im:
-        # Convert the image in grayscale
-        # ! NOTE : this creates a 2D array
-        grayscale_im = im.convert("L")
+    im = Image.fromarray(np_array)
 
-        # Create a crop tupple for getting the raccoon face approximatively
-        left, upper = 450, 110
-        # + 400 on both right and lower to ensure a square final result
-        right = left + 400
-        lower = upper + 400
+    # Convert the image in grayscale
+    # ! NOTE : this creates a 2D array
+    grayscale_im = im.convert("L")
 
-        crop_input = (left, upper, right, lower)
+    # Create a crop tupple for getting the raccoon face approximatively
+    left, upper = 450, 110
+    # + 400 on both right and lower to ensure a square final result
+    right = left + 400
+    lower = upper + 400
 
-        cropped = grayscale_im.crop(crop_input)
+    crop_input = (left, upper, right, lower)
 
-        # Dump the `cropped` image into a np.array
-        result_array = np.array(cropped)
+    cropped = grayscale_im.crop(crop_input)
 
-        print(f"New shape after slicing: {result_array.shape}")
-        print(result_array)
+    # Dump the `cropped` image into a np.array
+    result_array = np.array(cropped)
 
-        # For displaying the X and Y axis
-        plt.imshow(result_array, cmap="gray")
-        plt.show()
+    print(f"New shape after slicing: {result_array.shape}")
+    print(result_array)
 
-        """
-        ! NOTE ON plt.imshow() Function:
-        Because this function understands by default a 3D array, giving it a 2D
-        array makes the function to kinda `guess` the color.
-        It does happens that giving it a raw 2D array like this :
+    # For displaying the X and Y axis
+    plt.imshow(result_array, cmap="gray")
+    plt.show()
 
-        plt.imshow(result_array)
+    """
+    ! NOTE ON plt.imshow() Function:
+    Because this function understands by default a 3D array, giving it a 2D
+    array makes the function to kinda `guess` the color.
+    It does happens that giving it a raw 2D array like this :
 
-        Despite being converted in gray, the library applies a uniform colormap
-        which is 'viridis' by default, but isn't gray.
+    plt.imshow(result_array)
 
-        If we need to have a gray scale, we can force to colormap with
+    Despite being converted in gray, the library applies a uniform colormap
+    which is 'viridis' by default, but isn't gray.
 
-        plt.imshow(result_array, cmap='gray')
+    If we need to have a gray scale, we can force to colormap with
 
-        ! NOTE 2:
-        `plt.imshow()` take PIL objects and np.array()
+    plt.imshow(result_array, cmap='gray')
 
-        The following code:
-        plt.imshow(cropped, cmap='gray')
+    ! NOTE 2:
+    `plt.imshow()` take PIL objects and np.array()
 
-        Is as valid as with an PIL object.
-        """
+    The following code:
+    plt.imshow(cropped, cmap='gray')
+
+    Is as valid as with an PIL object.
+    """
 
 
 def main() -> None:
@@ -72,7 +73,7 @@ def main() -> None:
         sys.exit(1)
 
     print(np_result)
-    ft_zoom(image_name)
+    ft_zoom(np_result)
 
 
 if __name__ == "__main__":
