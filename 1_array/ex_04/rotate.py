@@ -4,6 +4,23 @@ import sys
 import matplotlib.pyplot as plt
 from PIL import Image
 
+def ninty_rotate(np_array):
+    """
+    Takes an NumPy array and does a 90 degres clockwise rotation
+    """
+
+    """
+    [1, 2, 3]
+    [4, 5, 6]
+    [7, 8, 9]
+
+    becomes 
+    [3,6,9]
+    [2,5,8]
+    [1,4,7]
+    """
+    ...
+
 def ft_rotate(np_array) -> None:
     """
     Crop, gray color and rotate 90 degres an image, with X/Y axis.
@@ -27,8 +44,10 @@ def ft_rotate(np_array) -> None:
 
     print(f"The shape of image is: {result_array.shape}")
     print(result_array)
-    
+
     # ! ROTATE THE CROPPED IMAGE
+
+    out = ninty_rotate(result_array)
 
     ######################################
 
