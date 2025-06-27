@@ -29,9 +29,18 @@ def ft_blue(img_array: np.ndarray):
 
 def ft_grey(img_array: np.ndarray):
     # Grayscale conversion formula: Y = 0.299*R + 0.587*G + 0.114*B
-    img_array[:,:,0] = img_array[:,:,0] / 3
-    img_array[:,:,1] = img_array[:,:,0] / 3
-    img_array[:,:,2] = img_array[:,:,0] / 3
-    show_image(img_array)
+    red = img_array[:,:,0] / (1 / 0.299)
+    green = img_array[:,:,1] / (1 / 0.587)
+    blue = img_array[:,:,2] / (1 / 0.114)
+
+    # x1 = np.add(red, green, blue)
+    # x1 = red
+    x1 = np.add(red, green, blue)
+    # x1 = np.add(x1, blue)
+
+    # print(red.dtype, green.dtype, blue.dtype)
+
+    # print(x1)
+    show_image(x1)
 
 
