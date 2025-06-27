@@ -53,7 +53,7 @@ def count_letters(str):
         else:
             punct += 1
 
-    print(f"The text contains {len(str)}", end="")
+    print(f"The text contains {len(str)} ", end="")
     print(f"character{'s' if len(str) > 1 else ''}:")
 
     print(f"{upper} upper letter{'s' if upper > 1 else ''}")
