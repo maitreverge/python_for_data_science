@@ -7,3 +7,5 @@ numpy
 pytest
 pillow
 matplotlib
+pandas
+seaborn
